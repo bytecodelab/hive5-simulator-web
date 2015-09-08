@@ -1,0 +1,24 @@
+<div id="sign_in" ng-show="navigation.isSelected('sign_in')" >
+    <h1>Login</h1>
+    <ul class="nav nav-pills">
+        <li role="presentation" ng-class="{ active: tab.isSelected('guest') }"><a href ng-click="tab.selectTab('guest')">Guest</a></li>
+        <li role="presentation" ng-class="{ active: tab.isSelected('social') }"><a href ng-click="tab.selectTab('social')">Social</a></li>
+        <li role="presentation" ng-class="{ active: tab.isSelected('email') }"><a href ng-click="tab.selectTab('email')">@</a></li>
+    </ul>
+    <div ng-show="tab.isSelected('guest')" class="tab-panel">
+        <form>
+            <select class="form-control" id="player_select" placeholder="Select player">
+                <option value="42112">anonymous-42112</option>
+                <option value="0">Creating new anonymous</option>
+            </select>
+            <button class="btn btn-success btn-justified login-button" ng-click="tab.signIn()">Login</button>
+
+        </form>
+    </div>
+    <div ng-show="tab.isSelected('social')" class="tab-panel">
+
+    </div>
+    <div ng-show="tab.isSelected('email')" class="tab-panel">
+
+    </div>
+</div>

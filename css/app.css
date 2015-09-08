@@ -1,13 +1,39 @@
-
-
-.menu-tile {
-    height:90px;
-    text-align: center;
-    background: #fff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    float:left;
-    margin-right:5px;
-    margin-bottom:5px;
+.user-info-wrap {
+  padding-top:15px;
 }
+
+#hub .menu-tile {
+  width:100px;
+  height:100px;
+  text-align: center;
+  background: #fff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  float:left;
+  margin-right:7px;
+  margin-bottom:7px;
+  cursor:pointer;
+}
+
+#hub .menu-tile-icon {
+  color:#666;
+  font-size:40px;
+  margin-top:26px;
+}
+
+#hub .menu-tile-caption {
+  font-size:12px;
+  line-height:1.0;
+}
+
+#sign_in .tab-panel {
+  background:rgb(42, 159, 214);
+  padding:10px;
+  margin-top:-5px;
+}
+
+#sign_in .login-button {
+  margin-top:8px;
+}
+

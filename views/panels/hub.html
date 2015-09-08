@@ -1,8 +1,7 @@
-<div ng-show="navigation.isSelected('hub')" >
-    <div class="row">
-        <div class="menu-tile col-md-4" ng-repeat="menu in hubPanelCtrl.menus">
-            <span class="{{ menu.icon }} menu-title-icon"></span>
-            <div class="menu-title-caption">{{ menu.caption }}</div>
-        </div>
+<div id="hub" ng-show="navigation.isSelected('hub')" >
+    <div class="menu-tile col-md-4" ng-repeat="menu in hubPanelCtrl.menus"
+            ng-click="navigation.selectMenu(menu.key)">
+        <span class="{{ menu.icon }} menu-tile-icon"></span>
+        <div class="menu-tile-caption">{{ menu.caption }}</div>
     </div>
 </div>
