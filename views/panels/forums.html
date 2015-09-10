@@ -1,3 +1,23 @@
 <div class="simulator-panel" ng-show="navigation.isSelected('forums')">
-    forums
+  <h1>Forums</h1>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <div class="col-md-12 row">
+        <div class="col-md-8">
+          <input class="form-control" ng-model="forumKey" placeholder="Forum Key"/>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-success pull-right form-control" ng-click="forumsPanelCtrl.refreshForum();">Refresh</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div>Total {{ threadCount }} threads</div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="thread in threads">
+      <h4>{{thread.title}}</h4>
+      <p>{{ thread.content }}</p>
+      <div class="date">{{ thread.created_at }}</div>
+    </li>
+  </ul>
 </div>
