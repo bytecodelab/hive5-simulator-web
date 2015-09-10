@@ -1,0 +1,9 @@
+<div class="simulator-panel" ng-show="navigation.isSelected('friends')">
+  <button class="btn btn-success pull-right" ng-click="refreshFriends();">Refresh</button>
+  <h1>Friends</h1>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="friend in friends">
+      {{ friend.platform }}-{{ friend.id }}
+    </li>
+  </ul>
+</div>

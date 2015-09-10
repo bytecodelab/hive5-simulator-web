@@ -1,3 +1,36 @@
-<div ng-show="navigation.isSelected('player')">
-    player
+<div class="simulator-panel" ng-show="navigation.isSelected('player')">
+  <button class="btn btn-success pull-right" ng-click="loadPlayer();">Refresh</button>
+  <h1>Player</h1>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="badge">{{ player.exp }}</span>
+      Exp
+    </li>
+    <li class="list-group-item">
+      <span class="badge">{{ player.level }}</span>
+      Level
+    </li>
+    <li class="list-group-item">
+      <span class="badge">{{ player.coin }}</span>
+      Coin
+    </li>
+    <li class="list-group-item">
+      <span class="badge">{{ player.cash }}</span>
+      Cash
+    </li>
+    <li class="list-group-item">
+      <span class="badge">{{ player.heart.value }} / {{ player.heart.max }}</span>
+      Heart
+    </li>
+    <li class="list-group-item">
+      <span class="badge">{{ player.loginCnt }}</span>
+      Login count
+    </li>
+    <li class="list-group-item">
+      Created at: {{ player.createdAt }}
+    </li>
+    <li class="list-group-item">
+      Last login: {{ player.lastLogin }}
+    </li>
+  </ul>
 </div>

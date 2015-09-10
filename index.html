@@ -18,44 +18,72 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href ng-click="navigation.selectMenu('hub')">Hive5 Simulator</a>
-          <div class="user-info-wrap">
-            <div ng-show="user.platform.length" class="label label-info label-lg">{{ user.platform }}-{{ user.id }}</div>
-          </div>
+          <a class="navbar-brand" href ng-click="navigation.selectMenu('hub')">
+            <span ng-hide="navigation.isSelected('hub') || navigation.isSelected('sign_in')" class="glyphicon glyphicon-chevron-left"></span> Hive5 Simulator
+          </a>
         </div>
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li ng-class="{ active: navigation.isSelected('player') }"><a href ng-click="navigation.selectMenu('player')">Player </a></li>
-            <li ng-class="{ active: navigation.isSelected('inventory') }"><a href ng-click="navigation.selectMenu('inventory')">Inventory </a></li>
-            <li ng-class="{ active: navigation.isSelected('friends') }"><a href ng-click="navigation.selectMenu('friends')">Friends </a></li>
-            <li ng-class="{ active: navigation.isSelected('in_app_purchase') }"><a href ng-click="navigation.selectMenu('in_app_purchase')">In-app Purchase </a></li>
-            <li ng-class="{ active: navigation.isSelected('rankings') }"><a href ng-click="navigation.selectMenu('rankings')">Rankings </a></li>
-            <li ng-class="{ active: navigation.isSelected('mailbox') }"><a href ng-click="navigation.selectMenu('mailbox')">Mailbox </a></li>
-            <li ng-class="{ active: navigation.isSelected('forums') }"><a href ng-click="navigation.selectMenu('forums')">Forums </a></li>
-            <li ng-class="{ active: navigation.isSelected('play_game') }"><a href ng-click="navigation.selectMenu('play_game')">Play Game </a></li>
-            <li ng-class="{ active: navigation.isSelected('item_explorer') }"><a href ng-click="navigation.selectMenu('item_explorer')">Item Explorer </a></li>
-            <li ng-class="{ active: navigation.isSelected('run_script') }"><a href ng-click="navigation.selectMenu('run_script')">Run Script </a></li>
-            <li ng-class="{ active: navigation.isSelected('chat') }"><a href ng-click="navigation.selectMenu('chat')">Chat </a></li>
-          </ul>
+          <div class="nav navbar-nav">
+          <li><a href="http://bytecodelab.com" target="_blank">About us</a></li>
         </div>
+        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+          <!--<ul class="nav navbar-nav">-->
+            <!--<li ng-class="{ active: navigation.isSelected('player') }"><a href ng-click="navigation.selectMenu('player')">Player </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('inventory') }"><a href ng-click="navigation.selectMenu('inventory')">Inventory </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('friends') }"><a href ng-click="navigation.selectMenu('friends')">Friends </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('in_app_purchase') }"><a href ng-click="navigation.selectMenu('in_app_purchase')">In-app Purchase </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('rankings') }"><a href ng-click="navigation.selectMenu('rankings')">Rankings </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('mailbox') }"><a href ng-click="navigation.selectMenu('mailbox')">Mailbox </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('forums') }"><a href ng-click="navigation.selectMenu('forums')">Forums </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('play_game') }"><a href ng-click="navigation.selectMenu('play_game')">Play Game </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('item_explorer') }"><a href ng-click="navigation.selectMenu('item_explorer')">Item Explorer </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('run_script') }"><a href ng-click="navigation.selectMenu('run_script')">Run Script </a></li>-->
+            <!--<li ng-class="{ active: navigation.isSelected('chat') }"><a href ng-click="navigation.selectMenu('chat')">Chat </a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
       </div>
     </nav>
+    <div class="basic-info-bar" ng-show="navigation.isLoggedIn()">
+      <div>Gold: {{ userInfo.gold }}</div>
+      <div>Stamina: {{ userInfo.stamina }}</div>
+      <div class="pull-right">
+        <div>{{ user.platform }}-{{ user.id }}</div>
+        <button class="btn btn-default btn-sm" ng-click="navigation.logOut()">Log out</button>
+      </div>
+    </div>
     <div class="container">
-
-      {{ navigation.path }}
       <sign-in></sign-in>
       <hub-panel></hub-panel>
       <player-panel></player-panel>
-
+      <inventory-panel></inventory-panel>
+      <friends-panel></friends-panel>
+      <in-app-purchase-panel></in-app-purchase-panel>
+      <rankings-panel></rankings-panel>
+      <mailbox-panel></mailbox-panel>
+      <forums-panel></forums-panel>
+      <play-game-panel></play-game-panel>
+      <item-explorer-panel></item-explorer-panel>
+      <run-script-panel></run-script-panel>
+      <chat-panel></chat-panel>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/hive5.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/app.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/panels/hub.js"></script>
     <script src="js/panels/player.js"></script>
+    <script src="js/panels/inventory.js"></script>
+    <script src="js/panels/friends.js"></script>
+    <script src="js/panels/in-app-purchase.js"></script>
+    <script src="js/panels/rankings.js"></script>
+    <script src="js/panels/mailbox.js"></script>
+    <script src="js/panels/forums.js"></script>
+    <script src="js/panels/play-game.js"></script>
+    <script src="js/panels/item-explorer.js"></script>
+    <script src="js/panels/run-script.js"></script>
+    <script src="js/panels/chat.js"></script>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<div id="run-script-panel" class="simulator-panel" ng-show="navigation.isSelected('run_script')">
+  <ul class="nav nav-pills">
+    <li role="presentation" ng-class="{ active: runScriptPanelCtrl.isSelected('request') }"><a href ng-click="runScriptPanelCtrl.selectTab('request')">Request</a></li>
+    <li role="presentation" ng-class="{ active: runScriptPanelCtrl.isSelected('response') }"><a href ng-click="runScriptPanelCtrl.selectTab('response')">Response</a></li>
+  </ul>
+  <div class="request tab-panel" ng-show="runScriptPanelCtrl.isSelected('request')">
+    <form class="form-horizontal" ng-submit="runScript()">
+      <div class="legend">Script Name</div>
+      <input type="text" class="form-control" ng-model="scriptName" placeholder="Script Name"/>
+      <div class="legend">Parameters</div>
+      <textarea type="text" class="form-control" ng-model="scriptParameters" placeholder="Parameters"></textarea>
+      <input type="submit" class="btn btn-success form-control" value="Run"/>
+    </form>
+  </div>
+  <div class="response tab-panel" ng-show="runScriptPanelCtrl.isSelected('response')">
+    <div class="legend">Result</div>
+    <textarea id="response-result" type="text" class="form-control" placeholder="Parameters">{{ responseResult }}</textarea>
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+<div class="simulator-panel" ng-show="navigation.isSelected('rankings')">
+  <h1>Rankings</h1>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="md-6">
+            <input class="form-control" ng-model="leaderboardKey" placeholder="Leaderboard Key"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="col-md-2">
+             <input class="form-control" ng-model="leaderboardRankMin" placeholder="Rank Min"/>
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" ng-model="leaderboardRankMax" placeholder="Rank Max"/>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-success pull-right form-control" ng-click="rankingsPanelCtrl.refreshRankings();">Refresh</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="score in scores">
+      <span class="badge">{{ score.value }}</span>
+      <div class="label label-danger">{{ score.rank }}</div> {{ score.user.platform }}-{{ score.user.id }}
+    </li>
+  </ul>
+</div>

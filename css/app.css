@@ -2,6 +2,22 @@
   padding-top:15px;
 }
 
+.basic-info-bar {
+    margin-top:-20px;
+    background-color:#ff8800;
+    height:50px;
+    padding:8px;
+    margin-bottom:10px;
+}
+
+.basic-info-bar div {
+    float:left;
+    color:white;
+    margin-right:10px;
+}
+
+.simulator-panel h1 { font-size: 40px; }
+
 #hub .menu-tile {
   width:100px;
   height:100px;
@@ -37,3 +53,22 @@
   margin-top:8px;
 }
 
+#run-script-panel .tab-panel {
+    background:rgb(42, 159, 214);
+    padding:10px;
+    margin-top:-5px;
+}
+
+
+#run-script-panel textarea {
+    min-height:200px;
+}
+
+#run-script-panel .form-control {
+    margin-bottom:8px;
+}
+
+#run-script-panel .legend {
+    color:white;
+    font-size:10px;
+}

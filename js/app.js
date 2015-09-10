@@ -1,7 +1,7 @@
-(function() {
-    var app = angular.module("simulator", ['simulator-navigation','hub', 'player']);
+(function(root) {
+    var app = angular.module("simulator", ['simulator-navigation','hub', 'player', 'inventory', 'friends', 'in-app-purchase', 'rankings', 'mailbox', 'forums','play-game','item-explorer','run-script','chat']);
 
-    Hive5.initialize("http://alpha.hornet.hive5.io", "d8444735-15e3-4198-9179-102ba68776fc", "testdevice4");
+    Hive5.initialize(Hive5Config.host, Hive5Config.app_key, "testdevice4");
 
     app.controller('AuthController', function() {
       this.isLoggedIn = function getIsLoggedIn() {
@@ -40,6 +40,11 @@
 
               $rootScope.$apply(function(){
                 $rootScope.user = data.user;
+                $rootScope.userInfo = {
+                  gold: 100,
+                  stamina:50
+                };
+                root.navigationService.selectMenu('hub');
               });
             });
           };
@@ -47,4 +52,4 @@
         controllerAs: "tab"
       }
     });
-})();
+})(this);
