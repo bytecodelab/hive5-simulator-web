@@ -1,3 +1,13 @@
 <div class="simulator-panel" ng-show="navigation.isSelected('mailbox')">
-    mailbox
+  <button class="btn btn-success pull-right" ng-click="mailboxPanelCtrl.refreshMailbox();">Refresh</button>
+  <h1>Mailbox</h1>
+  <div>Total {{ mailCount }} mails</div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="mail in mails">
+      <button class="btn btn-info pull-right" ng-show="mail.reward">Accept</button>
+      <p>{{ mail.content }}</p>
+      <div class="date">{{ mail.created_at }}</div>
+
+    </li>
+  </ul>
 </div>
