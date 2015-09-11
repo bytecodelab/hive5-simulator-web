@@ -4,10 +4,9 @@
   <div>Total {{ mailCount }} mails</div>
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="mail in mails">
-      <button class="btn btn-info pull-right" ng-show="mail.reward">Accept</button>
+      <button class="btn btn-info pull-right" ng-show="mail.reward" ng-click="mailboxPanelCtrl.acceptReward(mail.id)">Accept</button>
       <p>{{ mail.content }}</p>
       <div class="date">{{ mail.created_at }}</div>
-
     </li>
   </ul>
 </div>

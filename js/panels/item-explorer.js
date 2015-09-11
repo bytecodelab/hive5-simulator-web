@@ -6,15 +6,15 @@
       restrict:"E",
       templateUrl:"views/panels/item-explorer.html",
       controller: function($scope, $q) {
-        $scope.items = null;
+        $scope.items = [];
 
-        $scope.refreshInventory = function() {
+        $scope.refreshItems = function() {
           var deferred = $q.defer();
           var promise = deferred.promise;
           promise.then(function(result){
               $scope.items = result;
           }, function (reason) {
-              $scope.items = null;
+              $scope.items = [];
           });
 
           var p = Hive5.DataTable.get("items");

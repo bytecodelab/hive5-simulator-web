@@ -6,21 +6,25 @@
             restrict:"E",
             templateUrl:"views/panels/inventory.html",
             controller: function($scope, $q) {
-              $scope.inventory_items = null;
+              $scope.inventory_items = [];
 
-              $scope.reloadInventory = function() {
+              $scope.refreshInventory = function() {
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 promise.then(function(result){
                   $scope.inventory_items = result;
                 }, function (reason) {
-                  $scope.inventory_items = null;
+                  $scope.inventory_items = [];
                 });
 
                 var p = Hive5.Script.runScript("getUser", "");
                 p.then(function(response) {
                   var jsonData = JSON.parse(response.raw);
-                  deferred.resolve(jsonData.call_return.inventory);
+                  if (jsonData.result_code == 0) { // OK
+                    deferred.resolve(jsonData.call_return.user.inventory);
+                  } else {
+                    alert(jsonData.result_message);
+                  }
                 });
               };
             },

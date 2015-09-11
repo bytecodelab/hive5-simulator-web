@@ -1,3 +1,9 @@
-<div class="simulator-panel" ng-show="navigation.isSelected('play_game')">
-    play game
+<div id=play-game" class="simulator-panel" ng-show="navigation.isSelected('play_game')">
+  <h1>Play Game</h1>
+  <button class="btn btn-danger form-control" ng-click="playGamePanelCtrl.startGame();">Start Game</button>
+  <input ng-model="score" class="form-control" placeholder="Score" />
+  <input ng-model="exp" class="form-control" placeholder="Exp" />
+  <button class="btn btn-primary form-control" ng-click="playGamePanelCtrl.endGame();">End Game</button>
+  <div class="legend">Result</div>
+  <textarea ng-model="result" type="text" class="form-control result" readonly></textarea>
 </div>

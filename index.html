@@ -42,13 +42,21 @@
           <!--</ul>-->
         <!--</div>-->
       </div>
+      </div>
     </nav>
-    <div class="basic-info-bar" ng-show="navigation.isLoggedIn()">
-      <div>Gold: {{ userInfo.gold }}</div>
-      <div>Stamina: {{ userInfo.stamina }}</div>
-      <div class="pull-right">
-        <div>{{ user.platform }}-{{ user.id }}</div>
-        <button class="btn btn-default btn-sm" ng-click="navigation.logOut()">Log out</button>
+    <div class="basic-info-bar row" ng-show="navigation.isLoggedIn()">
+      <div class="user-info-wrap col-md-8">
+        <div class="user-info"><div class="label label-default">Exp</div> {{ userInfo.exp }}</div>
+        <div class="user-info"><div class="label label-default">Level</div> {{ userInfo.level }}</div>
+        <div class="user-info"><div class="label label-default">Coin</div> {{ userInfo.coin }}</div>
+        <div class="user-info"><div class="label label-default">Cash</div> {{ userInfo.cash }}</div>
+        <div class="user-info"><div class="label label-default">Heart</div> {{ userInfo.heart.value }} / {{ userInfo.heart.max }}</div>
+      </div>
+      <div class="col-md-4">
+        <div class="pull-right">
+          <div class="user-identity">{{ user.platform }}-{{ user.id }}</div>
+          <button class="btn btn-default btn-sm" ng-click="navigation.logOut()">Log out</button>
+        </div>
       </div>
     </div>
     <div class="container">
