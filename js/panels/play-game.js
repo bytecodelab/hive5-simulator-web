@@ -16,7 +16,7 @@
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 promise.then(function(result){
-                  $scope.result = JSON.stringify(result);
+                  $scope.result = JSON.stringify(result, null, 2);
                   root.userService.updateUserInfo(result.user);
 
                 }, function (reason) {
@@ -43,7 +43,19 @@
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 promise.then(function(result){
-                  $scope.result = JSON.stringify(result);
+
+                  if (result.levelUp && result.highScored) {
+                    alert('레벨업 보상, 최고득점 보상이 제공되었습니다.\n우편함을 확인하세요.');
+                  } else {
+                    if (result.levelUp) {
+                      alert('레벨업 보상 제공되었습니다.\n우편함을 확인하세요.');
+                    }
+                    if (result.highScored) {
+                      alert('최고득점 보상이 제공되었습니다.\n우편함을 확인하세요.');
+                    }
+                  }
+
+                  $scope.result = JSON.stringify(result, null, 2);
                   root.userService.updateUserInfo(result.user);
                 }, function (reason) {
                   $scope.result = "";
