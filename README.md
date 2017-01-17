@@ -11,7 +11,7 @@ web security를 해제하는 설정과 함께 크롬 브라우저를 띄워 이 
 터미널에서 다음과 같이 실행한다.
 
 ```
-open -a Google\ Chrome --args --disable-web-security
+open -a Google\ Chrome --args --disable-web-security --allow-file-access-from-files
 ```
 
 단, 먼저 모든 크롬창을 닫고 실행한다.
@@ -19,13 +19,13 @@ open -a Google\ Chrome --args --disable-web-security
 #### 윈도우에서
 
 ```
-"C:\PathTo\Chrome.exe" -disable-web-security
+"C:\PathTo\Chrome.exe" -disable-web-security -allow-file-access-from-files
 ```
 
 예를들어, 실행창에서 다음과 같이 실행하면 된다.
 
 ```
-"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -disable-web-security
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -disable-web-security -allow-file-access-from-files
 ```
 
 단, 실행하기 전 모든 크롬창을 닫아야 한다.
